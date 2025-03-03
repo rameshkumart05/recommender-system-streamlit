@@ -1,4 +1,4 @@
-# 4Geeks datacience project boilerplate
+# 4Geeks data science project boilerplate
 
 Minimal Python 3.11 repository for 4Geeks data science assignments. Several usefull Python packages and VSCode extensions are installed on Codespace boot-up. Directories for models and data are created within the Codespace but excluded from tracking.
 
