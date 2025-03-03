@@ -1,10 +1,10 @@
 # 4Geeks data science project boilerplate
 
-Minimal Python 3.11 repository for 4Geeks data science assignments. Several usefull Python packages and VSCode extensions are installed on Codespace boot-up. Directories for models and data are created within the Codespace but excluded from tracking.
+Minimal Python 3.11 repository for 4Geeks data science assignments. Several useful Python packages and VSCode extensions are installed on Codespace boot-up. Directories for models and data are created within the Codespace but excluded from tracking.
 
 ## 1. Set-up
 
-Fork this repository by clicking the *Fork* button at the upper right. Make sure to set 4Geeks as the owner of the new fork - this way 4Geeks pays for your codespace useage. Then start a Codespace on your fork by clicking the green *Code* button and then '**+**' icon under Codespaces in the drop-down menu.
+Fork this repository by clicking the *Fork* button at the upper right. Make sure to set 4Geeks as the owner of the new fork - this way 4Geeks pays for your codespace usage. Then start a Codespace on your fork by clicking the green *Code* button and then '**+**' icon under Codespaces in the drop-down menu.
 
 ## 2. Environment
 
@@ -27,7 +27,7 @@ Fork this repository by clicking the *Fork* button at the upper right. Make sure
 ### 2.2. Python
 **Base image**: [Python 3.11](https://github.com/devcontainers/images/tree/main/src/python)
 
-Packages installed via `requierments.txt`:
+Packages installed via `requirements.txt`:
 
 1. [numpy 2.2.3](https://numpy.org/doc/stable/index.html)
 2. [pandas 2.2.3](https://pandas.pydata.org/docs/)
@@ -36,7 +36,7 @@ Packages installed via `requierments.txt`:
 5. [seaborn 0.13.2](https://seaborn.pydata.org/)
 6. [ipykernel 6.29.5](https://pypi.org/project/ipykernel/)
 
-If you need to install additional Python packages, you can do so via the terminal with: `pip intall packagename`.
+If you need to install additional Python packages, you can do so via the terminal with: `pip install packagename`.
 
 ### 2.3. VSCode extensions
 
@@ -46,4 +46,4 @@ Sepcified via `devcontainier.json`.
 2. [ms-toolsai.jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 3. [streetsidesoftware.code-spell-checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
-VSCode extensions can be added via the *Extensions* tab located on the activities pannel at the left once inside the Codespace.
+VSCode extensions can be added via the *Extensions* tab located on the activities panel at the left once inside the Codespace.
