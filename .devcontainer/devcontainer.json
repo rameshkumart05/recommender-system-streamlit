@@ -21,6 +21,6 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "setup.shmkdir data && mkdir data/raw && mkdir data/interim && mkdir data/processed && mkdir models",
+	"postCreateCommand": "setup.sh",
 	"postAttachCommand": "htop"
 }
