@@ -1,10 +1,7 @@
 '''Movie recommendation web app with Flask.'''
 
 import pickle
-from flask import Flask, request, render_template
-
-# Define the flask application
-app=Flask(__name__)
+import streamlit as st
 
 # Load the assets
 MODEL=pickle.load(open('models/model.pkl', 'rb'))
@@ -31,23 +28,22 @@ def get_movie_recommendations(movie_title, model, tfidf_matrix, encoded_data_df)
     
     return similar_movies[1:]
 
+# Page title
+st.title('Movie recommender')
 
-@app.route('/', methods = ['GET', 'POST'])
-def index():
-    if request.method == 'POST':
+input_movie=st.selectbox(
+    label='Enter a movie title:', 
+    options=ENCODED_DATA_DF['title'],
+    placeholder='Star Wars'
+)
 
-        input_movie=request.form['title']
-        recommendations=get_movie_recommendations(
-            input_movie,
-            MODEL,
-            TFIDF_MATRIX,
-            ENCODED_DATA_DF
-        )
+if len(input_movie) > 0:
+    recommendations=get_movie_recommendations(
+        input_movie,
+        MODEL,
+        TFIDF_MATRIX,
+        ENCODED_DATA_DF
+    )
 
-        print(f'User input: {input_movie}')
-        print(f'Result: {recommendations}')
-
-    else:
-        recommendations=None
-
-    return render_template('index.html', recommendations=recommendations)
+    recommendations='\n'.join(recommendations)
+    st.text(recommendations)
