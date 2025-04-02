@@ -1,4 +1,4 @@
-# ML web app with Flask example: movie recommendation engine
+# ML web app with Streamlit: movie recommendation engine
 
 Service is live on [Render](https://movie-recommender-6ik9.onrender.com/).
 
@@ -6,13 +6,12 @@ Service is live on [Render](https://movie-recommender-6ik9.onrender.com/).
 
 ## Introduction
 
-This repository contains a minimal public web application depolymnet of the movie reccomendation model we built earlier in the course.
+This repository contains a minimal public web application deployment of the movie recommendation model we built earlier in the course.
 
-The project consists of four components:
+The project consists of three components:
 
 1. **[Recommender function](https://github.com/4GeeksAcademy/gperdrizet-k-nearest-neighbors/blob/main/src/solution.ipynb)**: This Python function is the heart of the app. It takes a movie title and uses a k-nearest neighbors and a movie database to return recommendations of other similar movies.
-2. **[Flask](https://flask.palletsprojects.com/en/stable/)**: Flask is a simple web application framework, it will act as the go-between to bridge the html world of the user's web-browser and our internal python function.
-3. **[Gunicorn](https://gunicorn.org/)**: Gunicorn is the web server that will serve the page to users and send data to our application via Flask.
+2. **[Streamlit](https://streamlit.io/)**: Streamlit is a web application framework, it will act as the go-between to bridge the html world of the user's web-browser and our internal python functions.
 4. **[Render](https://render.com/)**: Render is the cloud hosting service we will use to actually run our application. This allows the app to have a public URL where it can be accessed by users.
 
 ## Render deployment
