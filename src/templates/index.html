@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Diabetes model prediction</title>
+    <title>Movie recommendation service</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
             background-color: #f4f4f4;
         }
-        form {
+        form, div {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
         }
-        input[type="number"] {
-            width: 100%;
+        input[type="text"] {
+            width: 200px;
             padding: 10px;
             margin: 10px 0;
             border-radius: 4px;
@@ -41,18 +41,27 @@
     </style>
 </head>
 <body>
-    <h2>Submit values for prediction</h2>
+    <h2>Enter a movie title</h2>
     
     <form action="/" method="post">
-        Blood glucose: <input type="number" step="any" name="glucose" required><br><br>
-        Insulin: <input type="number" step="any" name="insulin" required><br><br>
-        BMI: <input type="number" step="any" name="bmi" required><br><br>
-        Age: <input type="number" step="any" name="age" required><br><br>
-        <input type="submit" value="Predict">
+        <input type="text" step="any" name="title" required>
+        <input type="submit" value="Submit">
     </form>
     
-    {% if prediction != None %}
-        <h3>Prediction: {{ prediction }}</h3>
+    {% if recommendations != None %}
+        {% if recommendations == 'Movie not found' %}
+            <h2>Movie not found</h2>
+        {% else %}
+            <h2>Recommendations</h2>
+            <div>
+                <ol>
+                    <li>{{ recommendations[0] }}</li>
+                    <li>{{ recommendations[1] }}</li>
+                    <li>{{ recommendations[2] }}</li>
+                    <li>{{ recommendations[3] }}</li>
+                </ol>
+            </div>
+        {% endif %}
     {% endif %}
 </body>
 </html>
