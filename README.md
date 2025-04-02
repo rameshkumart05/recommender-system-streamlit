@@ -26,10 +26,8 @@ This will take you to the new webservice's dashboard. Then, from the settings ta
 3. **Language**: Python 3
 4. **Branch**: main
 5. **Region**: Ohio (US east) - or whatever is closest to you
-6. **Root directory**: src
-7. **Build Command**: pip install -r ../requirements.txt
-8. **Start Command**: gunicorn app:app
-
-Only real gotcha here is the root directory. Setting it to src means that Render will run all commands from there. This is what we want in the case of our application. But, since the requirements file is in the project home (i.e. one directory above src) we need to make sure we set the path right while pip installing.
+6. **Root directory**: don't set
+7. **Build Command**: ./setup.sh
+8. **Start Command**: gunicorn src.app:app
 
 After that, set the instance type to free, and you can leave everything else alone. Click 'Deploy Web Service'! You should see the requirements.txt being installed in the log terminal and then gunicorn starting. If there were no problems, you can now access your web app at the URL provided at the top of the page, under the project name and GitHub repository link.
