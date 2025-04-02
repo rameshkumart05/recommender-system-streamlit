@@ -7,9 +7,9 @@ from flask import Flask, request, render_template
 app=Flask(__name__)
 
 # Load the assets
-MODEL=pickle.load(open('../models/model.pkl', 'rb'))
-TFIDF_MATRIX=pickle.load(open('../data/tfidf_matrix.pkl', 'rb'))
-ENCODED_DATA_DF=pickle.load(open('../data/encoded_features_df.pkl', 'rb'))
+MODEL=pickle.load(open('models/model.pkl', 'rb'))
+TFIDF_MATRIX=pickle.load(open('data/tfidf_matrix.pkl', 'rb'))
+ENCODED_DATA_DF=pickle.load(open('data/encoded_features_df.pkl', 'rb'))
 
 
 def get_movie_recommendations(movie_title, model, tfidf_matrix, encoded_data_df):
