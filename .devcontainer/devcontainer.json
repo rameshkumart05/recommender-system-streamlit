@@ -17,5 +17,5 @@
 	  }
 	},
 	"postCreateCommand": "./setup.sh",
-	"postAttachCommand": "gunicorn src.app:app"
+	"postAttachCommand": "streamlit run ./src/app.py"
 }
