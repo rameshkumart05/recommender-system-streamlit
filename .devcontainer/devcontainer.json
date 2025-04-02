@@ -19,5 +19,5 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "setup.sh",
-	"postAttachCommand": "htop"
+	"postAttachCommand": "gunicorn src/app:app"
 }
