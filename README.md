@@ -31,6 +31,6 @@ This will take you to the new web service dashboard. Then, from the settings tab
 5. **Region**: Ohio (US east) - or whatever is closest to you
 6. **Root directory**: don't set
 7. **Build Command**: ./setup.sh
-8. **Start Command**: gunicorn src.app:app
+8. **Start Command**: streamlit run ./src/app.py
 
-After that, set the instance type to free, and you can leave everything else alone. Click 'Deploy Web Service'! You should see the requirements.txt being installed in the log terminal and then gunicorn starting. If there were no problems, you can now access your web app at the URL provided at the top of the page, under the project name and GitHub repository link.
+After that, set the instance type to free, and you can leave everything else alone. Click 'Deploy Web Service'! You should see the setup.sh script being run in the log terminal. If there were no problems, you can now access your web app at the URL provided at the top of the page, under the project name and GitHub repository link.
