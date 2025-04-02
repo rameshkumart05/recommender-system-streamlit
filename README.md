@@ -1,4 +1,4 @@
-# ML web app with Flask example: movie reccomendation negine
+# ML web app with Flask example: movie recommendation engine
 
 ## Introduction
 
@@ -6,7 +6,7 @@ This repository contains the minimum requirements to get a public web applicatio
 
 The project consists of four components:
 
-1. **Reccomender function**: This function is the heart of the app. You will write it in Python. It takes a movie titel from the user and returns movie reccomendataions.
+1. **[Recommender function](https://github.com/4GeeksAcademy/gperdrizet-k-nearest-neighbors/blob/main/src/solution.ipynb)**: This function is the heart of the app. You will write it in Python. It takes a movie title from the user and returns movie recommendations.
 2. **[Flask](https://flask.palletsprojects.com/en/stable/)**: Flask is a simple web application framework, it will act as the go-between to bridge the html world of the user's web-browser and our internal python functions.
 3. **[Gunicorn](https://gunicorn.org/)**: Gunicorn is the webserver that will serve the page to users and send data to our application via Flask.
 4. **[Render](https://render.com/)**: Render is the cloud hosting service we will use to actually run our application. This allows us to have a public URL where the application can be accessed by users.
