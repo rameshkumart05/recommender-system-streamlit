@@ -1,5 +1,4 @@
-'''Simple command line utility to make movie recommendations
-based on KNN with cosine similarity.'''
+'''Simple command line utility to make movie recommendations based on KNN with cosine similarity.'''
 
 import pickle
 
@@ -33,7 +32,7 @@ if __name__ == '__main__':
         input_movie=input("Enter a movie title: ")
 
         # Get the recommendations
-        recommendations = get_movie_recommendations(input_movie, model, tfidf_matrix, encoded_data_df)
+        recommendations=get_movie_recommendations(input_movie, model, tfidf_matrix, encoded_data_df)
 
         # Print the results
         print("Film recommendations '{}'".format(input_movie))
