@@ -1,5 +1,7 @@
 # ML web app with Flask example: movie recommendation engine
 
+Service is live on [Render](https://movie-recommender-6ik9.onrender.com/)
+
 ## Introduction
 
 This repository contains the minimum requirements to get a public web application up and working using a model from one of our prior projects. I have completed much of the nit-picky configuration already, but it's up to you to build the heart of the application and deploy it to Render.
