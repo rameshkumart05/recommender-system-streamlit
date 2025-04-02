@@ -2,7 +2,7 @@
 
 Service is live on [Render](https://movie-recommender-6ik9.onrender.com/).
 
-**Note**: Render scales to zero, so it may take a few minutes for the service to start back up if no one has used it in a while.
+**Note**: Render 'scales to zero', so it may take a few minutes for the service to start back up if no one has used it in a while.
 
 ## Introduction
 
