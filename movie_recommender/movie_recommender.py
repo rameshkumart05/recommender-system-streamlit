@@ -28,22 +28,25 @@ def get_movie_recommendations(movie_title, model, tfidf_matrix, encoded_data_df)
     
     return similar_movies[1:]
 
-# Page title
-st.title('Movie recommender')
 
-input_movie=st.selectbox(
-    label='Enter a movie title:', 
-    options=ENCODED_DATA_DF['title'],
-    placeholder='Star Wars'
-)
+if __name__ == '__main__':
 
-if len(input_movie) > 0:
-    recommendations=get_movie_recommendations(
-        input_movie,
-        MODEL,
-        TFIDF_MATRIX,
-        ENCODED_DATA_DF
+    # Page title
+    st.title('KNN movie recommender')
+
+    input_movie=st.selectbox(
+        label='Enter a movie title:', 
+        options=ENCODED_DATA_DF['title'],
+        placeholder='Star Wars'
     )
 
-    recommendations='\n'.join(recommendations)
-    st.text(recommendations)
+    if len(input_movie) > 0:
+        recommendations=get_movie_recommendations(
+            input_movie,
+            MODEL,
+            TFIDF_MATRIX,
+            ENCODED_DATA_DF
+        )
+
+        recommendations='\n'.join(recommendations)
+        st.text(recommendations)
