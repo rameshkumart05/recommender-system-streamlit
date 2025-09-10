@@ -6,7 +6,7 @@ import streamlit as st
 # Load the assets
 MODEL=pickle.load(open('movie_recommender/static/model.pkl', 'rb'))
 TFIDF_MATRIX=pickle.load(open('movie_recommender/static/tfidf_matrix.pkl', 'rb'))
-ENCODED_DATA_DF=pickle.load(open('movie_recommender/static/encoded_features_df.pkl', 'rb'))
+ENCODED_DATA_DF=pickle.load(open('movie_recommender/static/tag_title_df.pkl', 'rb'))
 
 
 def get_movie_recommendations(movie_title, model, tfidf_matrix, encoded_data_df):
