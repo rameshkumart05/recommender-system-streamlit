@@ -6,4 +6,4 @@ pyarrow==21.0.0
 scikit-learn==1.7.1
 scipy==1.16.1
 seaborn==0.13.2
-streamlit
+streamlit==1.49.1
