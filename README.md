@@ -8,7 +8,8 @@ Service is live on [Render](https://movie-recommender-streamlit.onrender.com).
 
 **Note**: Render 'scales to zero', so it may take a few minutes for the service to start back up if no one has used it in a while.
 
-## Introduction
+
+## 1. Introduction
 
 This repository contains a minimal public web application deployment of the movie recommendation model we built earlier in the course.
 
@@ -18,7 +19,8 @@ The project consists of three components:
 2. **[Streamlit](https://streamlit.io/)**: Streamlit is a web application framework, it will act as the go-between to bridge the html world of the user's web-browser and our internal python functions.
 4. **[Render](https://render.com/)**: Render is the cloud hosting service we will use to actually run our application. This allows the app to have a public URL where it can be accessed by users.
 
-## Local testing
+
+## 2. Local testing
 
 To test your app locally inside your codespace run the following command in the terminal:
 
@@ -28,7 +30,8 @@ streamlit run src/movie_recommender.py
 
 This will allow you to test the app out, without having to actually deploy it to Render and will save you a lot of time. Once everything is working, it's time to deploy.
 
-## Render deployment
+
+## 3. Render deployment
 
 Go to [render.com](https://render.com/) and click 'Get started for free'. The site will ask for an email address and password and then send you a conformation link. After clicking the link, you are asked to fill out some basic profile details and are finally taken to the [Render Dashboard](https://dashboard.render.com/). From there, we can create a new service for our application:
 
@@ -44,14 +47,18 @@ This will take you to the new web service dashboard. Then, from the settings tab
 4. **Branch**: main
 5. **Region**: Ohio (US east) - or whatever is closest to you
 6. **Root directory**: don't set
-7. **Build Command**: pip install requirements.txt
+7. **Build Command**: pip install deployment_requirements.txt
 8. **Start Command**: streamlit run ./src/movie_recommender.py
+
+Under 'Advanced' set autodeploy to 'off'.
 
 After that, set the instance type to free, and you can leave everything else alone. Click 'Deploy Web Service'! You should see the setup.sh script being run in the log terminal. If there were no problems, you can now access your web app at the URL provided at the top of the page, under the project name and GitHub repository link.
 
-## CI/CD and GitHub Workflows (optional)
+
+## 4. CI/CD and GitHub Workflows (optional)
 
 This repository also demonstrates a simple CI/CD workflow for automated testing and deployment of a ML app to Render using pytest and GitHub workflows. It should be easily adaptable to other simple Render deployments. The rest of this README documents the set-up steps.
+
 
 ### Outline
 
@@ -65,7 +72,8 @@ This repository also demonstrates a simple CI/CD workflow for automated testing 
 8. How to get those cool 'passing' badges
 9. How to start the app automatically in codespaces
 
-### Workflow
+
+### 4.1. Workflow
 
 1. A developer on the project submits a pull request containing updates to the main fork.
 2. A human being sanity checks the changes and merges or closes the pull request at their discretion (this is the last human in the loop step!).
@@ -74,7 +82,8 @@ This repository also demonstrates a simple CI/CD workflow for automated testing 
 5. If the tests pass, the GitHub workflow triggers and action to deploy the code to Render.
 6. Render spins up the new version of the app.
 
-### Parts list
+
+### 4.2. Parts list
 
 1. **GitHub**: hosts the code and orchestrates the pipeline.
 2. **GitHub Codespaces**: used to develop and train the model and build the app.
@@ -83,7 +92,8 @@ This repository also demonstrates a simple CI/CD workflow for automated testing 
 5. **GitHub actions**: does the deployment.
 6. **Render**: hosts the app.
 
-### The movie recommender app
+
+### 4.3. The movie recommender app
 
 The only major difference in the app itself is the addition of testing with [pytest](https://docs.pytest.org/en/stable/index.html). Testing is needed since deployment will be automated - we don't want to deploy broken code and bring down the app!
 
@@ -113,7 +123,8 @@ The test can be run inside of a Codespace from the testing tab of the activities
 python -m pytest tests/test_model.py
 ```
 
-## 4. Pytest automation with GitHub workflows
+
+### 4.4. Pytest automation with GitHub workflows
 
 Next, we will set-up this test to run automatically when a pull request is created on main using [GitHub Workflows](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python). This ensures that we don't merge bad code to main and deploy it to production. In reality you would want more than just this one simple test, but it servers to demonstrate the workflow.
 
@@ -154,7 +165,8 @@ jobs:
 
 This workflow will set-up a Python 3.11 build environment, install the project dependencies and then run the test(s). Next, we will add a step to deploy to Render. You can also use a branch protection rule to **require** that this test passes before pull requests are merged to main. See instructions [here](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule).
 
-## 5. Automatic deployment with GitHub workflows
+
+### 4.5. Automatic deployment with GitHub workflows
 
 For Render deployment, we will use the GitHub action [Deploy to Render](https://github.com/gperdrizet/render-deploy). **Note**: this action is a community contribution - for long term deployment or major projects you would probably want to fork and maintain your own clone. This file points to my fork of it, so if you trust that I won't break or delete it, you're all set (I won't - I use it too). Here is the full workflow file:
 
@@ -191,7 +203,8 @@ jobs:
 
 Don't change the `RENDER_SERVICE_ID`, `RENDER_SERVICE_ID` or `GITHUB_TOKEN`. These are environment variables which will be populated from GitHub secrets at runtime.
 
-## 6. Set-up Render target
+
+### 4.6. Set-up Render target
 
 Now, we need to set-up a Render service to deploy to. This will only need to be done once, after that, the GitHub workflow will check and deploy new pull requests for us.
 
@@ -215,14 +228,16 @@ This will take you to the new web service dashboard. Then, from the settings tab
 
 Lastly, under the 'Advanced' drop-down menu at the bottom of the page, make sure to turn automatic deployment off. We will manage deployment from GitHub and don't want Render to try and re-deploy every new commit. Then click 'Deploy'. Your web app should spin up after a few minutes. Congrats, the app works!
 
-## 7. Authentication
+
+### 4.7. Authentication
 
 Last bit of set-up is to store your Render credentials on GitHub so that the GitHub workflow can deploy to Render on your behalf. To do this, we will use GitHub's [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions). Follow the instructions to add:
 
 1. RENDER_SERVICE_ID (found in the URL of the service page on Render)
 2. RENDER_API_KEY (Go to your Render profile > account settings > API keys)
 
-## 8. How to get those cool 'passing' badges
+
+### 4.8. How to get those cool 'passing' badges
 
 From the GitHub 'Actions' tab:
 
@@ -231,10 +246,12 @@ From the GitHub 'Actions' tab:
 3. Choose 'Create status badge'.
 4. Copy the markdown to your README file.
 
-## 9. How to start the app automatically in codespaces
+
+### 4.9. How to start the app automatically in codespaces
 
 Codespaces run an instance of the development container specified by `.devcontainer/container.json`. You can set-up lots of fun stuff from there. To start the app on Streamlit's development server using the following:
 
 ```json
 "postAttachCommand": "streamlit run src/movie_recommender.py"
 ```
+This will start the app whenever a codespace is opened on the repository.
