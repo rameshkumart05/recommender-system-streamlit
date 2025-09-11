@@ -1,5 +1,6 @@
 # ML web app with Streamlit: movie recommendation engine
 
+[![Pytest](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/pytest.yml/badge.svg)](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/pytest.yml)
 [![Codespaces Prebuilds](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg)](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/codespaces/create_codespaces_prebuilds)
 
 Service is live on [Render](https://movie-recommender-streamlit.onrender.com).
