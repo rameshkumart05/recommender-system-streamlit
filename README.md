@@ -1,6 +1,7 @@
 # ML web app with Streamlit: movie recommendation engine
 
 [![Pytest](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/pytest.yml/badge.svg)](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/pytest.yml)
+[![Render deployment](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/deploy.yml/badge.svg)](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/deploy.yml)
 [![Codespaces Prebuilds](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg)](https://github.com/4GeeksAcademy/gperdrizet-recommender-system-streamlit/actions/workflows/codespaces/create_codespaces_prebuilds)
 
 Service is live on [Render](https://movie-recommender-streamlit.onrender.com).
@@ -235,5 +236,5 @@ From the GitHub 'Actions' tab:
 Codespaces run an instance of the development container specified by `.devcontainer/container.json`. You can set-up lots of fun stuff from there. To start the app on Streamlit's development server using the following:
 
 ```json
-"postAttachCommand": "streamlit run movie_recommender/movie_recommender.py"
+"postAttachCommand": "streamlit run src/movie_recommender.py"
 ```
