@@ -18,7 +18,7 @@ jobs:
             deployments: write
 
         steps:
-          - uses: gperdrizet/render-deploy
+          - uses: gperdrizet/render-deploy@1.0.0
             with:
               service_id: ${{ secrets.RENDER_SERVICE_ID }}
               api_key: ${{ secrets.RENDER_API_KEY }}
